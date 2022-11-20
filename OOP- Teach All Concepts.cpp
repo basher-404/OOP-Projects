@@ -510,7 +510,7 @@ void file_handling(){    //file handling
 	
 	string choice;
 	cout<<"We can even read this complete program using file handling\n";
-	cout<<"If you want to read this program then type 'read' otherwise type anything else to terminate the program:\n";
+	cout<<"If you want to read this program then type 'read' otherwise type anything else to continue studying other topics:\n";
 	cin>>choice;
 	
 	if(choice=="read"){
