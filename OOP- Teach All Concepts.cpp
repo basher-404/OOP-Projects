@@ -85,8 +85,8 @@ void fnd_function(data4 obj){
 class data5{ //friend class
 	private:
 		void display(){
-			cout<<"A friend class can access private and protected members of other class in which it is declared as friend.\n";
-			cout<<"We can declare a class friend of another class in this way:-\n\n";
+			cout<<"1.A friend class can access private and protected members of other class in which it is declared as friend.\n";
+			cout<<"2.We can declare a class friend of another class in this way:-\n\n";
 			cout<<"class A{\n private:\n some data\n friend class B\n}\n\n";
 		}
 		
@@ -95,6 +95,7 @@ class data5{ //friend class
 
 class friend_of_data5{
   public:	
+  
 	void display(data5&obj){
 		obj.display();
 		cout<<"The above data is private data accessed by another class by making both classes friends\n";
@@ -143,7 +144,8 @@ class data6{ //constructor
 	public:
 		data6(){
 			cout<<"1.Constructor in C++ is a special method that is invoked automatically at the time of object creation.\n";
-			cout<<"2.It is used to initialize the data members of new objects generally.\n3.The constructor in C++ has the same name as the class or structure.\n";
+			cout<<"2.It is used to initialize the data members of new objects generally.\n";
+			cout<<"3.The constructor in C++ has the same name as the class or structure.\n";
 			cout<<"4.It constructs the values i.e. provides data for the object which is why it is known as constructors.\n";
 			cout<<"5.Constructor does not have a return value, hence they do not have a return type.\n";
 			cout<<"6.Constructors can be defined inside or outside the class declaration\n";
@@ -155,6 +157,7 @@ class data6{ //constructor
 
 class data7{  //types of constructors
 	public:
+		
 		int *num;
 		data7(){
 			cout<<"There are majorly 4 types of constructors:-\n";
@@ -201,16 +204,21 @@ class data8{ //Destructors
 	data8(){}
 	
 	~data8(){
-		cout<<"1.A destructor is also a special member function as a constructor.\n2.Destructor destroys the class objects created by the constructor.\n";
-		cout<<"3.Destructor has the same name as their class name preceded by a tilde (~) symbol.\n4.It is not possible to define more than one destructor.\n";
+		cout<<"1.A destructor is also a special member function as a constructor.\n";
+		cout<<"2.Destructor destroys the class objects created by the constructor.\n";
+		cout<<"3.Destructor has the same name as their class name preceded by a tilde (~) symbol.\n";
+		cout<<"4.It is not possible to define more than one destructor.\n";
 		cout<<"5.The destructor is only one way to destroy the object created by the constructor. Hence destructor can-not be overloaded.\n";
-		cout<<"6.Destructor neither requires any argument nor returns any value.\n7.It is automatically called when the object goes out of scope.\n";
-		cout<<"8.Destructors release memory space occupied by the objects created by the constructor.\n9.In destructor, objects are destroyed in the reverse of object creation.\n\n\n\n";
+		cout<<"6.Destructor neither requires any argument nor returns any value.\n";
+		cout<<"7.It is automatically called when the object goes out of scope.\n";
+		cout<<"8.Destructors release memory space occupied by the objects created by the constructor.\n";
+		cout<<"9.In destructor, objects are destroyed in the reverse of object creation.\n\n\n\n";
 	}
 };	
 
 class data9{ //Inheritence
 	public:
+		
 		void display(){
 			cout<<"1.The capability of a class to derive properties and characteristics from another class is called Inheritance.\n";
 			cout<<"2.The new class created is called “derived class” or “child class” and the existing class is known as the 'base class' or 'parent class'.\n";
@@ -297,6 +305,34 @@ class hybrid_inheritence: public hierarchical_inheritance{
  	}
 };
 
+
+class virtual_multiple: public dummy2{  //virtual function
+	public:     //Here if u go above you can see that we have declared dummy1 virtual while creating dummy_2
+       void display(){
+       	cout<<"1.Virtual classes are primarily used during multiple inheritance.\n";
+       	cout<<"2.To avoid, multiple instances of the same class being taken to the same class which later causes ambiguity, virtual classes are used.\n";
+       	cout<<"3.Syntax of declaring a class virtual is as following:-\n\n";
+       	cout<<"class B : virtual public A or class C : public virtual A\n\n";
+       	cout<<"*Note: virtual can be written before or after the public.\n";
+	   }
+};
+
+class parent{    //function overriding
+	public:
+		void display(){
+			cout<<"This text won't be displayed in console because I am going to be overriden by another function in child class\n";
+		}
+};
+
+class child: public parent{
+	public:
+		void display(){
+			cout<<"1.In function overriding, the same function is defined in both the derived class and the based class.\n";
+			cout<<"2.Now if we call this function using the object of the derived class, the function of the derived class is executed.\n";
+			cout<<"3.This is known as function overriding in C++. The function in derived class overrides the function in base class.\n";
+		}
+};
+
 void scope_resolution_op(){ 
 	cout<<"Scope resolution operaor looks like this :: and has a variety of uses:-\n\n";
 	cout<<"1.To access a global variable when there is a local variable with same name.\n";
@@ -311,10 +347,14 @@ void polymorphism(){   //polymorphism and it's types
 	cout<<"1.The term 'Polymorphism' is the combination of 'poly' + 'morphs' which means many forms. It is a greek word.\n";
 	cout<<"2.Polymorphism in C++ means the same entity(function, operator or object) behaves differently in different scanerios.\n";
 	cout<<"3.There are two types of polymorphism:-\n\n";
-	cout<<"a)Compile Time:-\ni)In compile time polymorphism, functions are called at the time of compilation.\n";
-	cout<<"ii)This is also known as early binding or static binding.\niii)Examples-Function Overloading, Operator Overloading.\n\n";
-	cout<<"b)Run Time:-\ni)In a run time polymorphism, functions are called at the time of program execution.\n";
-	cout<<"ii)This is also known as late binding or dynamic binding.\niii)Examples-Function Overriding, Virtual Function.\n";
+	cout<<"a)Compile Time:-\n";
+	cout<<"i)In compile time polymorphism, functions are called at the time of compilation.\n";
+	cout<<"ii)This is also known as early binding or static binding.\n";
+	cout<<"iii)Examples-Function Overloading, Operator Overloading.\n\n";
+	cout<<"b)Run Time:-\n";
+	cout<<"i)In a run time polymorphism, functions are called at the time of program execution.\n";
+	cout<<"ii)This is also known as late binding or dynamic binding.\n";
+	cout<<"iii)Examples-Function Overriding, Virtual Function.\n";
 }
 
 class operator_overloading_dummy_class{
@@ -328,6 +368,11 @@ void operator+(operator_overloading_dummy_class&obj1,operator_overloading_dummy_
      cout<<"3.By using operator overloading, we do not change the orignal meaning of the operator, we just prvoide an additional special meaning\n";
      cout<<"4.Syntax Of Operator Overloading:-\n\n";
      cout<<"returnType operator_symbol (arguments) {\n some data or function\n}\n\n";
+     cout<<"5.There are few operators which can't be overloaded and they are:\n";
+	 cout<<"a)sizeof operator\n";
+	 cout<<"b)Scope resolution Operator(::)\n";
+     cout<<"c)Class member access operator (.)\n";
+	 cout<<"d) Ternary or conditional operator (?:)\n";
 }
 
 class base{  //virtual function
@@ -339,6 +384,7 @@ class base{  //virtual function
 
 class derived : public base{
 	public:
+		
 		void display(){
 			cout<<"1.Virtual function is a member function which is declared within a base class and is re-defined (overridden) by a derived class.\n";
 			cout<<"2.When you refer to a derived class object using a pointer or a reference to the base class, you can call a virtual function for that object and execute the derived class’s version of the function.\n";
@@ -364,10 +410,12 @@ class another_base{ //pure virtual function and abstract class
 
 class another_derived : public another_base{
 	public:
+		
 		void display(){
 			cout<<"Pure Virtual functions:-\n\n";
 			cout<<"1.A pure virtual function is a virtual function in C++ for which we need not to write any function definition and only we have to declare it\n";
-			cout<<"2.It is declared by assigning 0 in the declaration.\n3.Syntax of declaring a pure virtual function is as following:-\n\n";
+			cout<<"2.It is declared by assigning 0 in the declaration.\n";
+	        cout<<"3.Syntax of declaring a pure virtual function is as following:-\n\n";
 			cout<<"virtual return_type function_name(paramters)=0\n\n";
 			cout<<"4.Pure virtual functions are used if a function doesn't have any use in the base class but the function must be implemented by all its derived classes\n\n";
 			cout<<"Abstract Classes:-\n\n";
@@ -396,7 +444,7 @@ class yet_another_derived: public yet_another_base{
 			cout<<"1.Deleting a derived class object using a pointer of base class type that has a non-virtual destructor results in undefined behavior.\n";
 			cout<<"2.To correct this situation, the base class should be defined with a virtual destructor.\n";
 			cout<<"3.Making base class destructor virtual guarantees that the object of derived class is destructed properly, i.e., both base class and derived class destructors are called.\n";
-			cout<<"A virtual destructor can be defined as following:-\n\n";
+			cout<<"4.A virtual destructor can be defined as following:-\n\n";
 			cout<<"virtual ~ class_name(parameters)\n\n";
 		}
 };
@@ -404,6 +452,7 @@ class yet_another_derived: public yet_another_base{
 class exception_h{ //exception handling
 	public:
 		void handle_exception(int x){
+			
 			if(x==0){
 				cout<<"What are Exceptions?\n\n";
 				cout<<"1.Exceptions are runtime anomalies or abnormal conditions that a program encounters during its execution.\n\n";
@@ -427,7 +476,7 @@ class exception_h{ //exception handling
 
 template <class T> 
 
-T template_info(T x){
+T template_info(T x){    // templates
 	cout<<"1.A template is a simple yet very powerful tool in C++.\n";
 	cout<<"2.The simple idea is to pass data type as a parameter so that we don’t need to write the same code for different data types.\n";
 	cout<<"3.Templates does this by defining generic classes and generic functions and thus provides support for generic programming.\n";
@@ -461,7 +510,7 @@ void file_handling(){    //file handling
 	
 	string choice;
 	cout<<"We can even read this complete program using file handling\n";
-	cout<<"If you want to read this program then type 'read' otherwise type anything else to continue learning other OOP concepts:\n";
+	cout<<"If you want to read this program then type 'read' otherwise type anything else to terminate the program:\n";
 	cin>>choice;
 	
 	if(choice=="read"){
@@ -486,8 +535,85 @@ void file_handling(){    //file handling
 	}
 }
 
+class abstraction{ //data abstraction
+	private:
+		void abstracted(){
+			cout<<"Data abstraction using access specifers, hidden data";
+		}
+		
+	public:
+		void display(){
+			cout<<"1.Abstraction means displaying only essential information and hiding the details\n";
+			cout<<"2.Data abstraction refers to providing only essential information about the data to the outside world, hiding the background details or implementation.\n";
+			cout<<"3.In C++ data abstraction can be achived by two ways:-\n\n";
+			cout<<"a)Abstraction using classes:";
+			cout<<" A class has the responsibility to determine which data member is to be visible outside and which is not and we can achieve this by using access specifiers\n";
+			cout<<"b)Abstraction in header files- Header files contains in built library functions like strcpy(),strlen (), pow(), etc and they perform various functions but hide the algorithm behind those functions\n";
+			cout<<"4.C++ provides a great level of abstraction. For example, pow() function is used to calculate the power of a number without knowing the algorithm the function follows.\n";
+			cout<<"5.In C++ program if we implement class with private and public members then it is an example of data abstraction.\n";
+		}
+};
+
+class encapsulation{ //encapsulation
+	private:
+		int x;
+	
+	public:
+		void display(int a){
+			x=a;
+			cout<<"1.In normal terms Encapsulation is defined as wrapping up of data and information under a single unit.\n";
+			cout<<"2.In OOP, Encapsulation is defined as binding together the data and the functions that manipulates them.\n";
+			cout<<"3.The data is not accessible to the outside world, and only those functions which are wrapped in the class can access it.\n";
+			cout<<"4.These functions provide the interface between the object's data and the program.\n";
+			cout<<"5.The function which we are making inside the class ,it must use the all member variable then only it is called encapsulation.\n";
+			cout<<"6.If we  don''t  make function inside the class which is using the member  variable of the class then we don’t call it encapsulation.\n";
+			cout<<"7.Encapsulation also leads to data abstraction or hiding\n";
+		}
+};
+
+class bind{  //binding
+	public:
+	void binding(){
+	cout<<"1.Binding refers to the process of converting identifiers (such as variable and performance names) into addresses.\n";
+	cout<<"2.Binding is done for each variable and functions.\n";
+	cout<<"3.For functions, it means that matching the call with the right function definition by the compiler.\n";
+	cout<<"4.It takes place either at compile time or at runtime.\n";
+	cout<<"5.Early Binding:\na) As the name indicates, compiler (or linker) directly associate an address to the function call.\n";
+	cout<<"b)It replaces the call with a machine language instruction that tells the mainframe to leap to the address of the function.\n";
+	cout<<"c)By default early binding happens in C++ and is also known as static binding.\n\n";
+	cout<<"6.Dynamic Binding:\na)In this, the compiler adds code that identifies the kind of object at runtime then matches the call with the right function definition\n";
+	cout<<"b)This can be achieved by declaring a virtual function.\n";
+	cout<<"c)Dynamic binding is also known as late binding.\n\n";
+	cout<<"7.Binding is associated with polymorphism and inheritance.\n";
+    }
+};
+
+class message_passing1{ //message passing
+    public:
+    	void display1(){
+    		cout<<"What is a message?\n\n";
+    		cout<<"1.A message is a form of request that is made to an object to perform a function specific to the object to which the request was made.\n";
+    		cout<<"2.A message is a form of communication between objects that make an object perform a task for the system.\n";
+    		cout<<"What is message passing?\n";
+    		cout<<"1.All communication between objects is done via message is called message passing.\n";
+    		cout<<"2.A message for an object is a request for execution of a function.\n";
+    		cout<<"3.The receiving object will invoke a function and generates results.\n";
+    		cout<<"4.Message passing involves specifying:\n\n";
+    		cout<<"a)The name of the object\n";
+    		cout<<"b)The name of the function\n";
+    		cout<<"c)The information to be send\n";
+		}
+};
+
+class message_passing2{
+	public:
+		void display2(message_passing1 message){
+			message.display1();
+		}
+};
+
 int main(){
-	int choice, data;
+	int choice;
 	cout<<"Struggling to lean OOP concepts?"<<endl;
 	cout<<"Don't worry I'm here to help you and I have created a program to help you"<<endl;
 	cout<<"Just ask this program about any topic you want to learn about";
@@ -511,30 +637,39 @@ int main(){
 		cout<<"15.Destructors\n";
 		cout<<"16.Inheritence\n";
 		cout<<"17.Types of Inheritence\n";
-		cout<<"18.Scope resolution operator\n";
-		cout<<"19.Polymorphism and it's types\n";
-		cout<<"20.Operator Overloading\n";
-		cout<<"21.Virtual Function\n";
-		cout<<"22.Pure Virtual Function and Abstract Class\n";
-		cout<<"23.Virtual Constructors and Virtual Destructors\n";
-		cout<<"24.Exception Handling\n";
-		cout<<"25.Templates\n";
-		cout<<"26.File Handling\n";
-		cout<<"27.Exit\n";
+		cout<<"18.Virtual Base Class\n";
+		cout<<"19.Function Overriding\n";
+		cout<<"20.Scope resolution operator\n";
+		cout<<"21.Polymorphism and it's types\n";
+		cout<<"22.Operator Overloading\n";
+		cout<<"23.Virtual Function\n";
+		cout<<"24.Pure Virtual Function and Abstract Class\n";
+		cout<<"25.Virtual Constructors and Virtual Destructors\n";
+		cout<<"26.Exception Handling\n";
+		cout<<"27.Templates\n";
+		cout<<"28.File Handling\n";
+		cout<<"29.Data Abstraction\n";
+		cout<<"30.Encapsulation\n";
+		cout<<"31.Binding\n";
+		cout<<"32.Message Passing\n";
+		cout<<"33.Exit\n";
 		cout<<"\n\n Choose a topic to learn about it:";
 		cin>>choice;
 	
 	switch(choice){
 	
-	case 1:	
-	cout<<endl<<endl<<endl;
-	     cout<<"Object-oriented programming (OOP) is a computer programming model that organizes software design around data, or objects, rather than functions and logic.\n";
-         cout<<"OOP focuses on the objects that developers want to manipulate rather than the logic required to manipulate them.\n";
-         cout<<"This approach to programming is well-suited for programs that are large, complex and actively updated or maintained.";
+	case 1:
+	    {
+	     cout<<endl<<endl<<endl;
+	     cout<<"1.Object-oriented programming (OOP) is a computer programming model that organizes software design around data, or objects, rather than functions and logic.\n";
+         cout<<"2.OOP focuses on the objects that developers want to manipulate rather than the logic required to manipulate them.\n";
+         cout<<"3.This approach to programming is well-suited for programs that are large, complex and actively updated or maintained.";
          cout<<endl<<endl<<endl;
 	     break;
+	   	}
 	   
 	case 2:
+		{
 		cout<<endl<<endl<<endl;
 		cout<<"OOP\t\t\t\t\t\t\t\t\tPOP\n\n";
 		cout<<"1.OOP stands for object oriented programming.\tPOP stands for procedure oriented programming.\n";
@@ -545,8 +680,10 @@ int main(){
 		cout<<"6.Used for solving big problems.\t\tNot suitable for solving big problems.\n";
 		cout<<endl<<endl<<endl;
 	    break;
-	
+        } 
+        
 	case 3:
+		{
 		cout<<endl<<endl<<endl;
 		cout<<"Advantages\t\t\t\t\t\tDisadvantages\n\n";
 		cout<<"1.Improved software-development productivity:\t\t1.Larger program size.\n";
@@ -556,62 +693,92 @@ int main(){
 	    cout<<"5.Good quality software\t\t\t\t\t5.It takes time to understand the OOPs language\n";
 	    cout<<endl<<endl<<endl;
 	    break;
+	    }
+	    
 	case 4:
+		{
 		cout<<endl<<endl<<endl;
 		cout<<"OOP has many features some of which are:-\n\n";
-		cout<<"1.Inheritence\n2.Polymorphism\n3.Virtual functions and Classes\n4.Classes and Objects\n5.Data Abstraction\n6.Encapsulation\n7.Friend function and friend class";
+		cout<<"1.Inheritence\n";
+		cout<<"2.Polymorphism\n";
+		cout<<"3.Virtual functions and Classes\n";
+		cout<<"4.Classes and Objects\n";
+		cout<<"5.Data Abstraction\n";
+		cout<<"6.Encapsulation\n";
+		cout<<"7.Friend function and friend class";
 		cout<<endl<<endl<<endl;
 		break;
-		
+        }
+        
 	case 5:
+		{
 		cout<<endl<<endl<<endl;
 		cout<<"There are endless applications of OOP: OOP is used in following:\n\n";
-		cout<<"1.Hypertext and Hypermedia\n2.Simulation and Modelling system\n3.Office Automation Systems\n4.Neural Networking and Parallel Programming\n5.Object Oriented Databases\n";
-		cout<<"6.Real Time System Design\n7.Client Server Systems\n8.CIM/CAD/CAM Systems\n";
+		cout<<"1.Hypertext and Hypermedia\n";
+		cout<<"2.Simulation and Modelling system\n";
+		cout<<"3.Office Automation Systems\n";
+		cout<<"4.Neural Networking and Parallel Programming\n";
+		cout<<"5.Object Oriented Databases\n";
+		cout<<"6.Real Time System Design\n";
+		cout<<"7.Client Server Systems\n";
+		cout<<"8.CIM/CAD/CAM Systems\n";
 		cout<<endl<<endl<<endl;
 		break;
-
+        }
+        
 	case 6:
+		{
 		cout<<endl<<endl<<endl;
 	    data1 obj;
 	    obj.display();
 	    cout<<endl<<endl<<endl;
 		break;
-		
+	    }
+	    
     case 7:
+    	{
     	cout<<endl<<endl<<endl;
     	data2::display();
     	cout<<endl<<endl<<endl;
     	break;
-    
+        }
+        
     case 8:
+    	{
     	cout<<endl<<endl<<endl;
     	data3 obj2;
     	obj2.display();
     	cout<<endl<<endl<<endl;
     	break;
-    	
+        }
+        
     case 9:
+    	{
     	cout<<endl<<endl<<endl;
     	data4 obj3;
         fnd_function(obj3);
     	cout<<endl<<endl<<endl;
     	break;
-    	
+        }
+
     case 10:
+    	{
     	cout<<endl<<endl<<endl;
     	data5 obj4;
     	friend_of_data5 obj5;
     	obj5.display(obj4);
     	cout<<endl<<endl<<endl;
     	break;
-    	
+        }
+        
     case 11:
+    	{
     	cout<<endl<<endl<<endl;
     	display_inline();
     	cout<<endl<<endl<<endl;
     	break;
-    	
+        }
+        
     case 12:
     	{
     	cout<<endl<<endl<<endl;
@@ -630,7 +797,7 @@ int main(){
     	data6 obj6;
     	cout<<endl<<endl<<endl;
     	break;
-    }
+        }
     	
     case 14:
     	{
@@ -673,13 +840,31 @@ int main(){
 		
 	case 18:
 		{
+		cout<<endl<<endl<<endl;
+		virtual_multiple vm;
+		vm.display();
+		cout<<endl<<endl<<endl;
+		break;
+		}
+		
+	case 19:
+		{
+		cout<<endl<<endl<<endl;
+		child chd;
+		chd.display();
+		cout<<endl<<endl<<endl;
+		break;
+		}
+		
+	case 20:
+		{
 		cout<<endl<<endl<<endl;	
 		scope_resolution_op();
 		cout<<endl<<endl<<endl;	
 		break;
 		}
 
-	case 19:
+	case 21:
 	    {
 	    cout<<endl<<endl<<endl;
 		polymorphism();
@@ -687,7 +872,7 @@ int main(){
 		break;	
 		}	
 	
-	case 20:
+	case 22:
     	{
     	cout<<endl<<endl<<endl;
     	operator_overloading_dummy_class object1, object2;
@@ -696,7 +881,7 @@ int main(){
     	break;
 		}
 		
-	case 21:
+	case 23:
 		{
 		cout<<endl<<endl<<endl;
 		base *ptr;
@@ -707,7 +892,7 @@ int main(){
 		break;
 		}
 		
-	case 22:
+	case 24:
 		{
 		cout<<endl<<endl<<endl;
 		another_base *bp= new another_derived();
@@ -716,7 +901,7 @@ int main(){
 		break;
 		}
 		
-	case 23:
+	case 25:
 		{
 		cout<<endl<<endl<<endl;
 		yet_another_derived *derv= new yet_another_derived();
@@ -726,7 +911,7 @@ int main(){
 		break;
 		}
 		
-	case 24:
+	case 26:
 	    {
 		cout<<endl<<endl<<endl;
 		
@@ -743,7 +928,7 @@ int main(){
 		break;
       }
       
-    case 25:
+    case 27:
     	{
     	cout<<endl<<endl<<endl;
     	int z=1;
@@ -752,7 +937,7 @@ int main(){
     	break;
 		}
 		
-    case 26:
+    case 28:
 	   {
     	cout<<endl<<endl<<endl;
     	file_handling();
@@ -760,16 +945,58 @@ int main(){
 		break;
 	   }
     	
-    case 27:
+    case 29:
     	{
+    	cout<<endl<<endl<<endl;
+    	abstraction abs;
+    	abs.display();
+    	cout<<endl<<endl<<endl;
+    	break;
+		}
+		
+	case 30:
+		{
+		cout<<endl<<endl<<endl;
+		encapsulation enc;
+		int a=10;
+		enc.display(a);
+		cout<<endl<<endl<<endl;
+		break;
+		}
+		
+	case 31:
+	    {
+		cout<<endl<<endl<<endl;
+		bind bd;
+		bd.binding();
+		cout<<endl<<endl<<endl;
+		break;
+	    }
+	    
+    case 32:
+	    {
+    	cout<<endl<<endl<<endl;
+    	message_passing2 pass;
+    	message_passing1 message;
+    	pass.display2(message);
+    	cout<<endl<<endl<<endl;
+		break;
+    	}
+    	
+    case 33:
+    	{
+    	cout<<endl<<endl<<endl;
+    	cout<<"Thanks for choosing my program to study and I hope I was able to help you.\n";
+    	cout<<"Please come back if you want to study any other topic and access notes\n\n\n\n";
+    	cout<<"******Program Terminated Successfully*******";
     	exit(0);
 	    }
 	
-	default:
+	default:	
 		cout<<"Wrong Choice\n\n\n";
 	
     }
-  }while(choice!=27);
+  }while(choice!=33);
   
   return 0;
 }
